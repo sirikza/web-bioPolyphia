@@ -1,0 +1,12 @@
+.jumbotron {
+padding-top: 1rem;
+background-color: #d8d7d7;
+background-image: url(img/Polyphia.png);
+background-size: cover;
+background-position: center;
+background-position-y: top;
+}
+
+section {
+    padding-top: 3rem;
+}
