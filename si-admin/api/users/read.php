@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-AllowHeaders, Authorization, X-Requested-With");
 include_once '../../config/database.php';
-include_once '../../models/users.php';
+include_once '../../models/Users.php';
 // session_start();
 // if (!isset($_SESSION['user'])) {
 //     http_response_code(404);
@@ -22,13 +22,13 @@ if (isset($_GET['id'])) {
     if ($item->full_name != null) {
         // create array
         $emp_arr = array(
-            "id" => $item->id,
+            "id"           => $item->id,
             "full_name" => $item->full_name,
-            "email" => $item->email,
-            "password" => $item->password,
-            "photo" => $item->photo,
-            "job" => $item->job,
-            "expected_position" => $item->expected_position,
+            "email"        => $item->email,
+            "password"     => $item->password,
+            "photo"         => $item->photo,
+            "job"    => $item->job,
+            "expected_position"       => $item->expected_position,
         );
         http_response_code(200);
         echo json_encode($emp_arr);
@@ -47,13 +47,13 @@ if (isset($_GET['id'])) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             $e = array(
-                "id" => $id,
+                "id"           => $id,
                 "full_name" => $full_name,
-                "email" => $email,
-                "password" => $password,
-                "photo" => $photo,
-                "job" => $job,
-                "expected_position" => $expected_position,
+                "email"        => $email,
+                "password"     => $password,
+                "photo"         => $photo,
+                "job"    => $job,
+                "expected_position"       => $expected_position,
             );
             array_push($UserArr["body"], $e);
         }

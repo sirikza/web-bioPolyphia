@@ -32,19 +32,19 @@ class Users
         $sqlQuery = "INSERT INTO " . $this->db_table . "
         SET
         full_name = :full_name,
-        email = :email,
-        password = :password,
-        photo = :photo,
-        job = :job,
-        expected_position = :expected_position";
+        email        = :email,
+        password     = :password,
+        photo         = :photo,
+        job    = :job,
+        expected_position       = :expected_position";
         $stmt = $this->conn->prepare($sqlQuery);
         // sanitize
         $this->full_name = htmlspecialchars(strip_tags($this->full_name));
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->password = htmlspecialchars(strip_tags($this->password));
-        $this->photo = htmlspecialchars(strip_tags($this->photo));
-        $this->job = htmlspecialchars(strip_tags($this->job));
-        $this->expected_position = htmlspecialchars(strip_tags($this->expected_position));
+        $this->email        = htmlspecialchars(strip_tags($this->email));
+        $this->password     = htmlspecialchars(strip_tags($this->password));
+        $this->photo         = htmlspecialchars(strip_tags($this->photo));
+        $this->job    = htmlspecialchars(strip_tags($this->job));
+        $this->expected_position       = htmlspecialchars(strip_tags($this->expected_position));
         // bind data
         $stmt->bindParam(":full_name", $this->full_name);
         $stmt->bindParam(":email", $this->email);
@@ -68,7 +68,7 @@ class Users
         password,
         photo,
         job,
-        expected_position,       
+        expected_position        
         FROM
         " . $this->db_table . "
         WHERE
@@ -79,11 +79,11 @@ class Users
         $stmt->execute();
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
         $this->full_name = $dataRow['full_name'];
-        $this->email = $dataRow['email'];
-        $this->password = $dataRow['password'];
-        $this->photo = $dataRow['photo'];
-        $this->job = $dataRow['job'];
-        $this->expected_position = $dataRow['expected_position'];
+        $this->email        = $dataRow['email'];
+        $this->password     = $dataRow['password'];
+        $this->photo         = $dataRow['photo'];
+        $this->job    = $dataRow['job'];
+        $this->expected_position       = $dataRow['expected_position'];
     }
     // UPDATE
     public function updateUser()
@@ -92,22 +92,22 @@ class Users
         " . $this->db_table . "
         SET
         full_name = :full_name,
-        email = :email,
-        password = :password,
-        photo = :photo
-        job = :job
-        expected_position = :expected_position
+        email        = :email,
+        password     = :password,
+        photo         = :photo,
+        job    = :job,
+        expected_position       = :expected_position
         WHERE
         id = :id";
         $stmt = $this->conn->prepare($sqlQuery);
 
         $this->full_name = htmlspecialchars(strip_tags($this->full_name));
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->password = htmlspecialchars(strip_tags($this->password));
-        $this->photo = htmlspecialchars(strip_tags($this->photo));
-        $this->job = htmlspecialchars(strip_tags($this->job));
-        $this->expected_position = htmlspecialchars(strip_tags($this->expected_position));
-        $this->id = htmlspecialchars(strip_tags($this->id));
+        $this->email        = htmlspecialchars(strip_tags($this->email));
+        $this->password     = htmlspecialchars(strip_tags($this->password));
+        $this->photo         = htmlspecialchars(strip_tags($this->photo));
+        $this->job    = htmlspecialchars(strip_tags($this->job));
+        $this->expected_position       = htmlspecialchars(strip_tags($this->expected_position));
+        $this->id           = htmlspecialchars(strip_tags($this->id));
         // bind data
         $stmt->bindParam(":full_name", $this->full_name);
         $stmt->bindParam(":email", $this->email);
@@ -150,8 +150,8 @@ class Users
         email,
         password,
         photo,
-        job,         
-        expected_position,         
+        job,
+        expected_position 
         FROM
         " . $this->db_table . "
         WHERE
