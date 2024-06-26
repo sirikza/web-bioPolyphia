@@ -130,7 +130,7 @@
                     }
 
                     $.ajax({
-                        url: "https://localhost/web_bio_rikza/si-admin/api/users/create.php",
+                        url: "http://localhost/web_bio_rikza/si-admin/api/users/create.php",
                         method: "POST",
                         data: JSON.stringify(formData),
                         success: function(data) {
@@ -147,14 +147,16 @@
                 } else if ($('#action').val() == "Update") {
                     var formData = {
                         'id': $('#id').val(),
-                        'fullname': $('#fullname').val(),
+                        'full_name': $('#full_name').val(),
                         'email': $('#email').val(),
-                        'pass': $('#pass').val(),
-                        'roles': $('#roles').val()
+                        'password': $('#password').val(),
+                        'job': $('#job').val(),
+                        'expected_position': $('#expected_position').val(),
+                        'photo': $('#photo').val()
                     }
 
                     $.ajax({
-                        url: "https://localhost/web_bio_rikza/si-admin/api/users/update.php",
+                        url: "http://localhost/web_bio_rikza/si-admin/api/users/update.php",
                         method: "PUT",
                         data: JSON.stringify(formData),
                         success: function(data) {
@@ -176,7 +178,7 @@
             $.ajax({
                 type: "GET",
                 contentType: "application/json",
-                url: "https://localhost/web_bio_rikza/si-admin/api/users/read.php",
+                url: "http://localhost/web_bio_rikza/si-admin/api/users/read.php",
                 success: function(response) {
                     // console.log(response);
                     var json = response.body;
@@ -229,7 +231,7 @@
             $.ajax({
                 type: "GET",
                 contentType: "application/json",
-                url: "http://localhost:81/konterku/api/user/read.php?id=" + id,
+                url: "http://localhost/web_bio_rikza/si-admin/api/users/read.php?id=" + id,
                 success: function(response) {
                     $('#id').val(response.id);
                     $('#fullname').val(response.fullname);
@@ -245,7 +247,7 @@
         function deleteOne(id) {
             alert('Yakin untuk hapus data ?');
             $.ajax({
-                url: "http://localhost:81/konterku/api/user/delete.php",
+                url: "http://localhost/web_bio_rikza/si-admin/api/users/delete.php",
                 method: "DELETE",
                 data: JSON.stringify({
                     "id": id
