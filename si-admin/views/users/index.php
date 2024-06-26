@@ -21,10 +21,10 @@
 
 <body>
     <div class="container">
-        <div id="message">
+        <div id=" ">
         </div>
         <h1 class="mt-4 mb-4 text-center text-danger">USERS
-            CRUD</h1>
+            BIODATA</h1>
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -41,8 +41,8 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Roles</th>
-                                <th>Created At</th>
+                                <th>Job</th>
+                                <th>Expected Position</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
