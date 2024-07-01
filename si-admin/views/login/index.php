@@ -47,7 +47,7 @@
                     data: JSON.stringify(formData),
                     success: function(data) {
                         $('#action_button').attr('disabled', false);
-                        window.location.href = 'http://localhost/web_bio_rikza/';
+                        window.location.href = "http://localhost/web_bio_rikza/si-admin/views/dashboard/index.php";
 
                     },
                     error: function(err) {
